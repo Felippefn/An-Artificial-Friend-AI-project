@@ -3,6 +3,8 @@ import time
 import calendar
 import types
 import random
+import requests 
+from discord import Webhook, RequestsWebhookAdapter
 print("Hi, im Barry\nAn Artificial Inteligence able to talk to humans!")
 userName = input('What is your name? ')
 listAnswers = ['I am pretty fine!', 'Better than never!',
@@ -219,9 +221,11 @@ def mainQ(stems, preAnswer):  # Function for input and conversation
     else:
         print("I did not learn that yet!\nOr you might have written it wrong...\nJust to remember you can check everything i can do with 'help' or 'comands' if you need!!")
         time.sleep(3)
-        report = input('Would you like to report that to my creator? ')
+        report = input('Would you like to report that to improve my knowledge? ')
         if compair('yes', report.lower()):
             answerRep = input('Type here what you would like to report: ')
+            web_hook = Webhook.from_url("https://discord.com/api/webhooks/886077668385230848/b1n3CdOaBBdc7WUCUcwMZIRhqXG19o4O_mYXV7nMChGnz-TZeCmPpT2JDIVrPYSiMgRi", adapter=RequestsWebhookAdapter())
+            web_hook.send(answerRep)
             print('Reporting : ' + '"' + answerRep + '"')
         else:
             print('Alright!!')

@@ -219,14 +219,16 @@ def mainQ(stems, preAnswer):  # Function for input and conversation
     elif compairWithKey('daily', ['phrase', 'inspiration'], enterData):
         print('\n' + getRandomSomething(randomPhrases) + '\n')
     else:
+        time.sleep(1)
         print("I did not learn that yet!\nOr you might have written it wrong...\nJust to remember you can check everything i can do with 'help' or 'comands' if you need!!")
         time.sleep(3)
-        report = input('Would you like to report that to improve my knowledge? ')
+        report = input('Would you like to report that as a feedback? ')
         if compair('yes', report.lower()):
             answerRep = input('Type here what you would like to report: ')
             web_hook = Webhook.from_url("https://discord.com/api/webhooks/886077668385230848/b1n3CdOaBBdc7WUCUcwMZIRhqXG19o4O_mYXV7nMChGnz-TZeCmPpT2JDIVrPYSiMgRi", adapter=RequestsWebhookAdapter())
-            web_hook.send(answerRep)
+            web_hook.send(userName + " || " + localtime + " || Reported: {}".format(answerRep))
             print('Reporting : ' + '"' + answerRep + '"')
+            time.sleep(1)
         else:
             print('Alright!!')
 

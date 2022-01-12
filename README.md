@@ -8,4 +8,5 @@
 Feel free to leave a feedback
 
 <h2></h2>
-<img src="https://img.icons8.com/emoji/48/000000/warning-emoji.png"/>THERE IS NO MACHINE LEARNING INVOLVED IN THIS PROJECT, only conditionals.
+<h5><img src="https://img.icons8.com/emoji/48/000000/warning-emoji.png"/><br>THERE IS NO MACHINE LEARNING INVOLVED IN THIS PROJECT, only conditionals.<br>
+Thank you for checking and HAVE FUN!</h5>
